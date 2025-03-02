@@ -184,6 +184,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
+$(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.Spacewar)
 
 # Display
 PRODUCT_PACKAGES += \
