@@ -196,7 +196,7 @@ vendor.netflix.bsp_rev=Q6450-36256-1
 ro.oem_unlock_supported=1
 
 # Perf
-ro.vendor.extension_library=libqti-perfd-client.so
+vendor.perf.framepacing.enable=1
 
 # QTEE
 persist.vendor.qteeconnector.retrying_interval=30
