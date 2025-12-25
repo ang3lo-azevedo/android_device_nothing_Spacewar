@@ -88,7 +88,8 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.powerstats.disable=true
 
 # Camera
-vendor.camera.aux.packagelist=com.snapchat.android
+persist.vendor.camera.aux.packagelist=*
+persist.camera.aux.packagelist=*
 
 # Crypto
 ro.crypto.dm_default_key.options_format.version=2
