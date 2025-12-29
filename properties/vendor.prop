@@ -90,6 +90,7 @@ ro.bluetooth.powerstats.disable=true
 # Camera
 persist.vendor.camera.aux.packagelist=*
 persist.vendor.camera.mfnr.enable=0
+persist.vendor.camera.enableUBWC=0
 persist.camera.aux.packagelist=*
 
 # Crypto
