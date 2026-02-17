@@ -18,7 +18,7 @@ $(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-custom
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
