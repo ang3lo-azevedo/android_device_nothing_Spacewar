@@ -19,6 +19,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'vendor/nothing/Spacewar',
+    'hardware/qcom-caf/common/libqti-perfd-client',
     'hardware/qcom-caf/sm8350',
     'hardware/qcom-caf/wlan',
     'hardware/nothing',

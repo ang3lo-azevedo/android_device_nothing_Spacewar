@@ -1,5 +1,8 @@
 # Fingerprint
 type fingerprint_data_file, data_file_type, file_type;
 
+# Power HAL
+type vendor_sysfs_msm_subsys, fs_type, sysfs_type;
+
 # sysfs
 type sysfs_torch, sysfs_type, fs_type;
