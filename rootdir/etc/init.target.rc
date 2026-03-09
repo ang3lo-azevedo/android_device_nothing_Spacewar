@@ -213,6 +213,8 @@ on boot
     chown system system /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/exclamation_leds_effect
     chown system system /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/setting_leds_effect
     chown system system /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/setting_br
+    chown system system /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/video_leds_effect
+    chmod 0220 /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/video_leds_effect
 
     # Hung_task
     write /proc/sys/kernel/hung_task_timeout_secs 180
@@ -398,3 +400,9 @@ on property:sys.touch.fod_en.enable=1
     write sys/bus/spi/devices/spi0.0/fts_gesture_mode 3
 on property:sys.touch.fod_en.enable=0
     write sys/bus/spi/devices/spi0.0/fts_gesture_mode 4
+
+on property:vendor.camera.recording=1
+    write /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/video_leds_effect 1
+
+on property:vendor.camera.recording=0
+    write /sys/devices/platform/soc/984000.i2c/i2c-0/0-0020/leds/aw210xx_led/video_leds_effect 0
