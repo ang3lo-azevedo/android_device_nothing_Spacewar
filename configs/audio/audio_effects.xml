@@ -41,9 +41,6 @@
         <library name="volume_listener" path="libvolumelistener.so"/>
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
-        <!-- add for dirac support -->
-        <library name="dirac" path="libdiraceffect_NT.so"/>
-        <!-- add for dirac support -->
         <!--DOLBY DAP-->
         <library name="dap" path="libswdap.so"/>
         <library name="dvl" path="libdlbvol.so"/>
@@ -102,9 +99,6 @@
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
-        <!-- add for dirac support -->
-        <effect name="dirac" library="dirac" uuid="ae737c63-f2c0-5457-909e-1e940c91b67b"/>
-        <!-- add for dirac support -->
         <!--DOLBY DAP-->
         <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
         <effect name="dlb_music_listener" library="dvl" uuid="40f66c8b-5aa5-4345-8919-53ec431aaa98"/>
