@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">0dp</dimen>
 
-    <!-- Default device corner radius, used for assist UI -->
+    <!-- Status Bar Dimensions -->
+    <dimen name="status_bar_padding_start">0dp</dimen>
+    <dimen name="status_bar_padding_end">0dp</dimen>
+    <dimen name="status_bar_clock_starting_padding">0dp</dimen>
+    <dimen name="status_bar_clock_end_padding">0dp</dimen>
+    <dimen name="status_bar_left_clock_starting_padding">0dp</dimen>
+
+    <!-- System Icons Container -->
+    <dimen name="hover_system_icons_container_padding_start">5dp</dimen>
+    <dimen name="hover_system_icons_container_padding_end">5dp</dimen>
+
+    <!-- Display / Rounded Corners -->
     <dimen name="config_rounded_mask_size">107px</dimen>
     <dimen name="config_rounded_mask_size_top">107px</dimen>
     <dimen name="config_rounded_mask_size_bottom">107px</dimen>
-    
-    <!-- Bottom margin size when fingerprint in display is active -->
-    <dimen name="keyguard_indication_margin_bottom">16dp</dimen>
 
-    <!-- Location on the screen of the center of the physical power button. This is a reasonable
-    default that should be overridden by device-specific overlays. -->
+    <!-- Keyguard / Lock Screen -->
+    <dimen name="keyguard_carrier_text_margin">0dp</dimen>
+    <dimen name="keyguard_indication_margin_bottom">12dp</dimen>
+
+    <!-- Hardware Layout -->
     <dimen name="physical_power_button_center_screen_location_y">965px</dimen>
+
 </resources>
