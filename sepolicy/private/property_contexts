@@ -7,3 +7,8 @@ persist.vendor.overlay.fp_model             u:object_r:system_fingerprint_prop:s
 persist.vendor.overlay.fp_serial            u:object_r:system_fingerprint_prop:s0
 persist.vendor.overlay.fp_vendor            u:object_r:system_fingerprint_prop:s0
 ro.bootloader.locked                        u:object_r:system_fingerprint_prop:s0
+
+# UI
+is_expressive_design_enabled                u:object_r:exported_default_prop:s0
+viewroot.profile_rendering                  u:object_r:exported_default_prop:s0
+ro.input.resampling                         u:object_r:exported_default_prop:s0
