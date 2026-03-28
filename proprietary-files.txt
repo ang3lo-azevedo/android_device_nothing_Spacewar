@@ -686,6 +686,7 @@ vendor/etc/init/qseecomd.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/etc/gpfspath_oem_config.xml
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
 vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -708,10 +709,16 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libbase64.so
 vendor/lib/libcppf.so
 vendor/lib/libtrustedapploader.so
+vendor/lib/liboemcrypto.so
+vendor/lib/libminkdescriptor.so
+vendor/lib/libdisplayconfig.qti.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libbase64.so
 vendor/lib64/libtrustedapploader.so
+vendor/lib64/liboemcrypto.so
 vendor/lib64/libwvhidl.so
+vendor/lib64/libminkdescriptor.so
+vendor/lib64/libdisplayconfig.qti.so
 
 # ESE
 vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
@@ -1183,7 +1190,6 @@ vendor/etc/ssg/ta_config.json
 vendor/etc/ssg/tz_whitelist.json
 vendor/lib/libconfigdb.so
 vendor/lib/libmdmdetect.so
-vendor/lib/libminkdescriptor.so
 vendor/lib/libnetmgr.so
 vendor/lib/libqcbor.so
 vendor/lib/libqrtr.so
@@ -1191,7 +1197,6 @@ vendor/lib64/deviceInfoServiceModuleNr.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
-vendor/lib64/libminkdescriptor.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnetmgr_nr_fusion.so
