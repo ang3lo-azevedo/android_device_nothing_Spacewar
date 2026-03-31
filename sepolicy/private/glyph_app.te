@@ -7,6 +7,7 @@ allow glyph_app {
   activity_task_service
   audio_service
   audioserver_service
+  mediaserver_service
   autofill_service
   batteryproperties_service
   batterystats_service
