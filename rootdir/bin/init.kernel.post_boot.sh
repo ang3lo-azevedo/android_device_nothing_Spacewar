@@ -206,7 +206,7 @@ configure_zram_parameters() {
     else
         let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
     fi
-    [ $zRamSizeMB -gt 4096 ] && let zRamSizeMB=4096
+    [ $zRamSizeMB -gt 2048 ] && let zRamSizeMB=2048
 
     echo lz4kd > /sys/block/zram0/comp_algorithm
 
