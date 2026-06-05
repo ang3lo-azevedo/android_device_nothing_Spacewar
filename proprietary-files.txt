@@ -98,9 +98,11 @@ vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
+vendor/lib/soundfx/libdiraceffect_NT.so
 vendor/lib/lib_lvacfs.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
+vendor/lib/libdirac.so
 vendor/lib/liblvacfs_wrapper.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
