@@ -42,6 +42,7 @@ BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
+    androidboot.selinux=permissive \
     lpm_levels.sleep_disabled=1 \
     service_locator.enable=1 \
     androidboot.usbcontroller=a600000.dwc3 \
