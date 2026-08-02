@@ -12,6 +12,7 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 | DaViDev985 | `derp16.2` | NOS 3.2 post_boot.sh, sepolicy perf, FP screen-off unlock |
 | smrth097 | `16.2-clean` | Keyguard margin fix, vibrate on icon animation |
 | crDroid | `16.0` | NOS 3.2 mixer paths, camcorder audio fix, radio power saving, Bluetooth ASHA/AptX |
+| halogenOS | `XOS-16.2` | Linear-nits brightness mapping, Extra Dim evening dimmer config |
 | VoltageOS | custom | LTO/O3 optimizations, DeviceAsWebcam, NGlyphs migration |
 
 ## Features
@@ -44,4 +45,5 @@ brunch Spacewar
 - [William24hmar](https://github.com/William24hmar) -- kernel source
 - [LineageOS](https://github.com/LineageOS) -- hardware/nothing base
 - [crDroid](https://github.com/crdroidandroid) -- Bluetooth and radio improvements
+- [halogenOS](https://github.com/halogenOS) -- Display brightness and Extra Dim improvements
 - [VoltageOS](https://github.com/VoltageOS) -- ROM platform
