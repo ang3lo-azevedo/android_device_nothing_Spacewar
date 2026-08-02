@@ -17,7 +17,7 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 
 ## Features
 
-- NGlyphs (replaces ParanoidGlyph) -- system app for glyph LED control, no root needed
+- NGlyphs (replaces ParanoidGlyph) - system app for glyph LED control, no root needed
 - NOS 3.2 vibrator improvements (amplitude, richtap consistency, effect remapping)
 - FP screen-off unlock enabled by default
 - NOS 3.2 post_boot.sh and power profile
