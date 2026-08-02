@@ -27,9 +27,13 @@ allow glyph_app {
   sensitive_content_protection_service
   thermal_service
   protolog_configuration_service
+  trust_service
 }:service_manager find;
 
 dontaudit glyph_app default_prop:file { read open getattr map };
+
+get_prop(glyph_app, audio_prop)
+get_prop(glyph_app, media_variant_prop)
 
 allow glyph_app system_app_data_file:dir create_dir_perms;
 allow glyph_app system_app_data_file:{

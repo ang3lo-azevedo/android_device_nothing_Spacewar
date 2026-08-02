@@ -21,7 +21,7 @@ $(call inherit-product-if-exists, vendor/google/GoogleCamera/config.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-custom
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
     FrameworksSpacewarOverlay \
@@ -67,10 +67,10 @@ TARGET_SCREEN_WIDTH := 1080
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
-# Paranoid Glyph
+# Glyph
 PRODUCT_PACKAGES += \
-    ParanoidGlyphPhone1 \
-    GlyphAdapter
+    GlyphAdapter \
+    GlyphManager
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
