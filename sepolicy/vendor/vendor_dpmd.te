@@ -1,1 +1,3 @@
-allow vendor_dpmd vendor_hal_diaghal_hwservice:hwservice_manager find;
+userdebug_or_eng(`
+  allow vendor_dpmd vendor_hal_diaghal_hwservice:hwservice_manager find;
+')
