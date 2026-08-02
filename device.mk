@@ -69,10 +69,10 @@ TARGET_SCREEN_WIDTH := 1080
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
-# Paranoid Glyph
+# Glyph
 PRODUCT_PACKAGES += \
-    ParanoidGlyphPhone1 \
-    GlyphAdapter
+    GlyphAdapter \
+    GlyphManager
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-glyph.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-glyph.xml
