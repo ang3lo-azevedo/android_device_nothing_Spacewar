@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
     SettingsSpacewarOverlay \
     SystemUISpacewarOverlay \
     NcmTetheringOverlay \
-    DeviceAsWebcamResTarget
+    DeviceAsWebcamResTarget \
+    DeviceAsWebcam
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
