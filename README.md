@@ -17,15 +17,17 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 
 ## Features
 
-- Nothing Camera with video recording fix (libui-v34, vidhance blob fixup)
+- Nothing Camera with video recording fix (libui-v34, vidhance blob fixup, 14 arcsoft libs)
 - Google Camera (from kleidione's vendor)
 - NGlyphs (replaces ParanoidGlyph) - system app for glyph LED control, no root needed
+- KernelSU with syscall tamper and full SUSFS (root hiding)
 - OrangeFox recovery compatible (TARGET_NO_RECOVERY set)
 - NOS 3.2 vibrator improvements (amplitude, richtap consistency, effect remapping)
 - FP screen-off unlock enabled by default
 - NOS 3.2 post_boot.sh and power profile
 - Recovery ADSP battery monitoring
 - Device as Webcam support (HQ mode default)
+- ADB USB debugging enabled by default
 - Dolby audio integration
 - LTO + O3 + ThinLTO optimizations
 - HWUI compile for performance
