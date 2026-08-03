@@ -15,6 +15,9 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
 
+# NT Camera
+$(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
+
 # Inherit Google Camera
 $(call inherit-product-if-exists, vendor/google/GoogleCamera/config.mk) 
 
