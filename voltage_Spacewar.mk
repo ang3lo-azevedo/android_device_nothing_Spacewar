@@ -15,11 +15,9 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 # Fix duplicate sysprop: ROM audio defaults use = instead of ?=
 $(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_alert=/ro.config.alarm_alert?=/; s/ro.config.notification_sound=/ro.config.notification_sound?=/' vendor/voltage/audio/audio.mk 2>/dev/null; true)
 
-# Setup KernelSU source for KSU-SUSFS kernel (only if not already present)
+# Setup KernelSU source (direct path, no symlink needed)
 $(shell if [ ! -d kernel/nothing/sm7325/KernelSU/kernel ]; then \
     cd kernel/nothing/sm7325 && \
-    curl -LSs "https://raw.githubusercontent.com/backslashxx/KernelSU/master/kernel/setup.sh" | bash -s master 2>/dev/null && \
-    rm -rf KernelSU && \
     git clone -b master-susfs https://github.com/William24hmar/KernelSU.git 2>/dev/null; \
 fi; true)
 
