@@ -8,12 +8,12 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 
 | Base | Branch | Source |
 |------|--------|--------|
-| kleidione | `bp4a` | NOS 3.2 fixes, vibrator, FP permissions, power profile |
-| DaViDev985 | `derp16.2` | NOS 3.2 post_boot.sh, sepolicy perf, FP screen-off unlock |
-| smrth097 | `16.2-clean` | Keyguard margin fix, vibrate on icon animation |
-| crDroid | `16.0` | NOS 3.2 mixer paths, camcorder audio fix, radio power saving, Bluetooth ASHA/AptX |
-| halogenOS | `XOS-16.2` | Linear-nits brightness mapping, Extra Dim evening dimmer config |
-| VoltageOS | custom | LTO/O3 optimizations, DeviceAsWebcam, NGlyphs migration |
+| [kleidione](https://github.com/kleidione) | [`bp4a`](https://github.com/kleidione/device_nothing_Spacewar) | NOS 3.2 fixes, vibrator, FP permissions, power profile |
+| [DaViDev985](https://github.com/DaViDev985) | [`derp16.2`](https://github.com/DaViDev985/device_nothing_Spacewar) | NOS 3.2 post_boot.sh, sepolicy perf, FP screen-off unlock |
+| [smrth097](https://github.com/smrth097) | [`16.2-clean`](https://github.com/smrth097/android_device_nothing_Spacewar) | Keyguard margin fix, vibrate on icon animation |
+| [crDroid](https://github.com/crdroidandroid) | [`16.0`](https://github.com/crdroidandroid/android_device_nothing_Spacewar) | NOS 3.2 mixer paths, camcorder audio fix, radio power saving, Bluetooth ASHA/AptX |
+| [halogenOS](https://github.com/halogenOS) | [`XOS-16.2`](https://github.com/halogenOS/android_device_nothing_Spacewar) | Linear-nits brightness mapping, Extra Dim evening dimmer config |
+| [VoltageOS](https://github.com/VoltageOS) | custom | LTO/O3 optimizations, DeviceAsWebcam, NGlyphs migration |
 
 ## Features
 
