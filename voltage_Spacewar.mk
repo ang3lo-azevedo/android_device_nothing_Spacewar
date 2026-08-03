@@ -12,9 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Spacewar device
 $(call inherit-product, device/nothing/Spacewar/device.mk)
 
-# Override build type (requires GPG key for OFFICIAL)
-VOLTAGE_BUILD_TYPE := COMMUNITY
-
 # Fix duplicate sysprop: ROM audio defaults use = instead of ?=
 $(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_alert=/ro.config.alarm_alert?=/; s/ro.config.notification_sound=/ro.config.notification_sound?=/' vendor/voltage/audio/audio.mk 2>/dev/null; true)
 
