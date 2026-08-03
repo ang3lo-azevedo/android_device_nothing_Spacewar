@@ -7,3 +7,6 @@ libfastcvopt.so
 liblistensoundmodel2.so
 libOpenCL.so
 libcamxextension_night.so
+libarcsoft_mf_superresolution.so
+libarcsoft_beautyshot.so
+libarcsoft_aiscenedetection.so
