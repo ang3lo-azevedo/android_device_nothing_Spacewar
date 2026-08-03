@@ -290,7 +290,8 @@ $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,tr
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
+    $(LOCAL_PATH)/configs/public.libraries.system_ext.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries.txt
 
 # Neural Networks
 PRODUCT_PACKAGES += \
