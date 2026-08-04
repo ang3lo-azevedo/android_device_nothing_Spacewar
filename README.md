@@ -26,6 +26,7 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 - FP screen-off unlock enabled by default
 - NOS 3.2 post_boot.sh and power profile
 - Recovery ADSP battery monitoring
+- Device as Webcam support (HQ mode default)
 - ADB USB debugging enabled by default
 - Dolby audio integration
 - LTO + O3 + ThinLTO optimizations
