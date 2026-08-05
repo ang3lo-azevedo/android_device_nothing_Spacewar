@@ -17,11 +17,6 @@ $(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
 
 # NT Camera
 $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
-PRODUCT_COPY_FILES += \
-    vendor/nothing/camera/proprietary/system/etc/permissions/NTCamera-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/NTCamera-permissions.xml \
-    vendor/nothing/camera/proprietary/system/etc/permissions/NTCamera-google-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/NTCamera-google-permissions.xml \
-    vendor/nothing/camera/proprietary/system/etc/permissions/privapp-permissions-NothingExperience.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-NothingExperience.xml \
-    vendor/nothing/Spacewar/proprietary/vendor/etc/camera/vidhance_calibration:$(TARGET_COPY_OUT_VENDOR)/etc/camera/vidhance_calibration
 
 # Inherit Google Camera
 $(call inherit-product-if-exists, vendor/google/GoogleCamera/config.mk) 
