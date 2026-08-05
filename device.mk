@@ -224,7 +224,6 @@ $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.Spacewar)
 $(call soong_config_set,camera,package_name,com.nothing.camera)
-$(call soong_config_set,surfaceflinger,frame_rate_category_min,120)
 
 # Device as Webcam
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
