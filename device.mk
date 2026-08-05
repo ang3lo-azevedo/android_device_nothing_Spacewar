@@ -35,6 +35,23 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+# Logging
+SPAMMY_LOG_TAGS := \
+    SDM \
+    SDM-histogram \
+    SRE \
+    WifiHAL \
+    cnss-daemon \
+    libcitsensorservice@2.0-impl \
+    libsensor-displayalgo \
+    libsensor-parseRGB \
+    libsensor-ssccalapi
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    PRODUCT_VENDOR_PROPERTIES += \
+        $(foreach tag,$(SPAMMY_LOG_TAGS),log.tag.$(tag)=E)
+endif
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -198,8 +215,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libui-v34
 
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
 $(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.Spacewar)
+$(call soong_config_set,camera,package_name,com.nothing.camera)
+$(call soong_config_set,surfaceflinger,frame_rate_category_min,120)
 
 # Device as Webcam
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
