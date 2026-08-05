@@ -17,6 +17,11 @@ $(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
 
 # NT Camera
 $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
+PRODUCT_COPY_FILES += \
+    vendor/nothing/camera/proprietary/system/etc/permissions/NTCamera-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/NTCamera-permissions.xml \
+    vendor/nothing/camera/proprietary/system/etc/permissions/NTCamera-google-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/NTCamera-google-permissions.xml \
+    vendor/nothing/camera/proprietary/system/etc/permissions/privapp-permissions-NothingExperience.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-NothingExperience.xml \
+    vendor/nothing/Spacewar/proprietary/vendor/etc/camera/vidhance_calibration:$(TARGET_COPY_OUT_VENDOR)/etc/camera/vidhance_calibration
 
 # Inherit Google Camera
 $(call inherit-product-if-exists, vendor/google/GoogleCamera/config.mk) 
@@ -277,6 +282,7 @@ PRODUCT_PACKAGES += \
     init.qti.kernel.rc \
     init.qti.kernel.sh \
     init.recovery.qcom.rc \
+    init.Spacewar.perf.rc \
     init.target.rc \
     ueventd.qcom.rc
 
@@ -284,6 +290,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
+n# IRQ balance config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
@@ -319,6 +328,9 @@ PRODUCT_COPY_FILES += \
 # Neural Networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
+n# QTI
+PRODUCT_PACKAGES += \
+    libvndfwk_detect_jni.qti.vendor # Needed by CNE app
 
 # Nothing Audio
 PRODUCT_COPY_FILES += \
