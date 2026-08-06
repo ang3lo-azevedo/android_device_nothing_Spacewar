@@ -16,7 +16,8 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 $(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_alert=/ro.config.alarm_alert?=/; s/ro.config.notification_sound=/ro.config.notification_sound?=/' vendor/voltage/audio/audio.mk 2>/dev/null; true)
 
 # Fetch KernelSU source if missing (required by KSU-SUSFS kernel)
-$(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Makefile ]; then \
+$(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Kconfig ]; then \
+    rm -rf kernel/nothing/sm7325/KernelSU && \
     cd kernel/nothing/sm7325 && curl -LSs "https://raw.githubusercontent.com/William24hmar/KernelSU/master/kernel/setup.sh" | bash -s master-susfs 2>/dev/null; \
 fi; true)
 
