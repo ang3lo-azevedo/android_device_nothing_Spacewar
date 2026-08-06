@@ -270,10 +270,10 @@ on boot && property:persist.vendor.usb.controller.default=*
 
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
-    start fix_gesture_nav
+    start restart_launcher
 
-# Fix tablet gesture bar not activating on boot
-service fix_gesture_nav /system/bin/cmd overlay enable com.android.internal.systemui.navbar.gestural
+# Fix taskbar not showing until launcher restart on boot
+service restart_launcher /system/bin/sh -c "sleep 3 && am force-stop com.android.launcher3"
     class late_start
     user shell
     group shell
