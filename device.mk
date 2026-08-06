@@ -265,6 +265,7 @@ PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
     init.class_main.sh \
+    fix_taskbar.sh \
     init.kernel.post_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
