@@ -270,6 +270,15 @@ on boot && property:persist.vendor.usb.controller.default=*
 
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
+    start fix_gesture_nav
+
+# Fix tablet gesture bar not activating on boot
+service fix_gesture_nav /system/bin/cmd overlay enable com.android.internal.systemui.navbar.gestural
+    class late_start
+    user shell
+    group shell
+    disabled
+    oneshot
 
 on init && property:ro.boot.mode=charger
     mount_all /vendor/etc/charger_fw_fstab.qti --early
