@@ -6267,8 +6267,11 @@ misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
 real_path=${misc_link##*>}
 setprop persist.vendor.mmi.misc_dev_path $real_path
 
-# Fix taskbar: wait for user unlock then restart launcher
+# Fix taskbar: wait for user unlock + launcher running, then restart
 (
+    sleep 5
     while [ "$(getprop sys.user.0.ce_available)" != "1" ]; do sleep 2; done
+    while ! pidof com.android.launcher3 > /dev/null 2>&1; do sleep 1; done
+    sleep 3
     am force-stop com.android.launcher3
 ) &
