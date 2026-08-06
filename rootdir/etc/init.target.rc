@@ -278,7 +278,7 @@ service fix_taskbar /vendor/bin/fix_taskbar.sh
     disabled
     oneshot
 
-on property:sys.user.0.ce_available=1
+on property:sys.boot_completed=1
     start fix_taskbar
 
 on init && property:ro.boot.mode=charger

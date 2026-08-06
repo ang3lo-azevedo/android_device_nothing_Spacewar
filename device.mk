@@ -261,11 +261,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Init scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/bin/fix_taskbar.sh:$(TARGET_COPY_OUT_VENDOR)/bin/fix_taskbar.sh
+
 PRODUCT_PACKAGES += \
     fstab.default \
     fstab.default.vendor_ramdisk \
     init.class_main.sh \
-    fix_taskbar.sh \
     init.kernel.post_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
