@@ -270,13 +270,13 @@ on boot && property:persist.vendor.usb.controller.default=*
 
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
-    start restart_launcher
+    exec_start restart_launcher
 
 # Fix taskbar not showing until launcher restart on boot
-service restart_launcher /system/bin/sh -c "sleep 3 && am force-stop com.android.launcher3"
-    class late_start
+service restart_launcher /system/bin/sh -c "sleep 5 && am force-stop com.android.launcher3"
     user shell
     group shell
+    seclabel u:r:shell:s0
     disabled
     oneshot
 
