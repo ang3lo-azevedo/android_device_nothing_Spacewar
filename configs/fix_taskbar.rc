@@ -1,8 +1,0 @@
-service fix_taskbar /system/bin/sh -c "settings put global enable_taskbar 1"
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start fix_taskbar

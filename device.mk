@@ -262,7 +262,6 @@ PRODUCT_COPY_FILES += \
 
 # Init scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/fix_taskbar.sh:$(TARGET_COPY_OUT_VENDOR)/bin/fix_taskbar.sh
 
 PRODUCT_PACKAGES += \
     fstab.default \
