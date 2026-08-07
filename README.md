@@ -35,6 +35,8 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 - Dolby audio integration
 - Display linear-nits brightness mapping with Extra Dim
 - Bluetooth codecs: ASHA, AptX/HD/Adaptive, LDAC, AAC
+- Persistent taskbar (config_enableTaskbar overlay)
+- Android Auto USB audio routing fix
 
 ## Build
 
@@ -51,7 +53,6 @@ brunch Spacewar
 - [smrth097](https://github.com/smrth097) - perf tuning, IRQ balance, WiFi improvements
 - [Jis G Jacob (StudioKeys)](https://github.com/StudioKeys-Dumps) - NGlyphs, recovery ADSP patch
 - [William24hmar](https://github.com/William24hmar) - kernel source
-- [rodrig20](https://github.com/rodrig20) - USB gadget improvements
 - [LineageOS](https://github.com/LineageOS) - hardware/nothing base
 - [crDroid](https://github.com/crdroidandroid) - Bluetooth, camera, and radio improvements
 - [halogenOS](https://github.com/halogenOS) - Display brightness and Extra Dim improvements
