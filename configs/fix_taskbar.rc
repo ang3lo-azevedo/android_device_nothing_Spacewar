@@ -1,4 +1,4 @@
-service fix_taskbar /system/bin/sh -c "sleep 10 && am force-stop com.android.launcher3"
+service fix_taskbar /system/bin/sh -c "sleep 10 && settings put global enable_taskbar 1 && am force-stop com.android.launcher3"
     user root
     group root
     disabled
