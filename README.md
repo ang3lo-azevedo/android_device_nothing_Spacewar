@@ -36,7 +36,7 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 - Display linear-nits brightness mapping with Extra Dim
 - Bluetooth codecs: ASHA, AptX/HD/Adaptive, LDAC, AAC
 - Persistent taskbar (config_enableTaskbar overlay)
-- Android Auto USB audio routing fix
+
 
 ## Build
 
