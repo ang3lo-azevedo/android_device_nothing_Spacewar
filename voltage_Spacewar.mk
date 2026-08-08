@@ -18,7 +18,8 @@ $(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_a
 # Fetch KernelSU source if missing (required by KSU-SUSFS kernel)
 $(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Kconfig ]; then \
     rm -rf kernel/nothing/sm7325/KernelSU && \
-    git clone -b master-susfs --depth 1 https://github.com/William24hmar/KernelSU.git kernel/nothing/sm7325/KernelSU 2>/dev/null; \
+    git clone -b master-susfs --depth 1 https://github.com/William24hmar/KernelSU.git kernel/nothing/sm7325/KernelSU 2>/dev/null && \
+    sh device/nothing/Spacewar/rootdir/bin/fix_ksu_dupes.sh; \
 fi; true)
 
 # Inherit some common Voltage stuff.
