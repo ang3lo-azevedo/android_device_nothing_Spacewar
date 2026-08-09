@@ -5,4 +5,8 @@
 
     <!-- Force taskbar on by default -->
     <integer name="def_enable_taskbar">1</integer>
+
+    <!-- Default color mode: Natural (0) -->
+    <integer name="def_display_color_mode">0</integer>
+    <integer name="def_display_color_enhance">0</integer>
 </resources>
