@@ -70,7 +70,41 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # Paranoid Glyph
 PRODUCT_PACKAGES += \
     ParanoidGlyphPhone1 \
-    GlyphAdapter
+    GlyphAdapter \
+    GlyphManager
+
+# NGlyphs
+PRODUCT_PACKAGES += GlyphManager
+
+# SPAMMY_LOG_TAGS
+SPAMMY_LOG_TAGS := \
+    SDM \
+    SDM-histogram \
+    SRE \
+    WifiHAL \
+    cnss-daemon \
+    libcitsensorservice@2.0-impl \
+    libsensor-displayalgo \
+    libsensor-parseRGB \
+    libsensor-ssccalapi
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    PRODUCT_VENDOR_PROPERTIES += \
+        $(foreach tag,$(SPAMMY_LOG_TAGS),log.tag.$(tag)=E)
+endif
+
+# Device as Webcam
+TARGET_BUILD_DEVICE_AS_WEBCAM := true
+PRODUCT_PACKAGES += DeviceAsWebcamResTarget
+
+# Camera soong configs
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+
+# IRQ balance
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
+    config_enableTaskbar
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
