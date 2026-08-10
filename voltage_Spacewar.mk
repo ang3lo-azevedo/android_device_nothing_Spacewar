@@ -22,6 +22,8 @@ $(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Kconfig ]; then \
 fi; \
 sh device/nothing/Spacewar/rootdir/bin/fix_ksu_dupes.sh > /dev/null 2>&1; \
 true)
+# Replace vendor camxoverridesettings.txt with crDroid version
+$(shell sh device/nothing/Spacewar/rootdir/bin/fix_camera_configs.sh)
 
 # Inherit some common Voltage stuff.
 $(call inherit-product, vendor/voltage/config/common_full_phone.mk)
