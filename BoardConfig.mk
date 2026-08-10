@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_RELEASE := trunk_staging
+
 DEVICE_PATH := device/nothing/Spacewar
 
 # A/B
