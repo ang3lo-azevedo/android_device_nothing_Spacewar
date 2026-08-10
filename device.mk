@@ -25,7 +25,9 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
-    $(LOCAL_PATH)/overlay-voltage
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 81b0fac (Add VoltageOS maintainer overlay string)
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
