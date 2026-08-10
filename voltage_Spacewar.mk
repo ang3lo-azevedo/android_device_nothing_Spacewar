@@ -12,30 +12,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Spacewar device
 $(call inherit-product, device/nothing/Spacewar/device.mk)
 
-# Fix duplicate sysprop: ROM audio defaults use = instead of ?=
-$(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_alert=/ro.config.alarm_alert?=/; s/ro.config.notification_sound=/ro.config.notification_sound?=/' vendor/voltage/audio/audio.mk 2>/dev/null; true)
-
-# Fetch KernelSU source if missing (required by KSU-SUSFS kernel)
-$(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Kconfig ]; then \
-    rm -rf kernel/nothing/sm7325/KernelSU && \
-    git clone -b master-susfs --depth 1 https://github.com/William24hmar/KernelSU.git kernel/nothing/sm7325/KernelSU 2>/dev/null; \
-fi; \
-sh device/nothing/Spacewar/rootdir/bin/fix_ksu_dupes.sh > /dev/null 2>&1; \
-true)
-# Replace vendor camxoverridesettings.txt with crDroid version
-$(shell sh device/nothing/Spacewar/rootdir/bin/fix_camera_configs.sh)
-
-# Inherit some common Voltage stuff.
-$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
-
-# Boost Framework configuration for Snapdragon 778G+
-VOLTAGE_CPU_SMALL_CORES := 0,1,2,3
-VOLTAGE_CPU_BIG_CORES := 4,5,6,7
-VOLTAGE_CPU_BG := 0-2
-VOLTAGE_CPU_FG := 0-7
-VOLTAGE_CPU_LIMIT_BG := 0-1
-VOLTAGE_CPU_UNLIMIT_UI := 0-7
-VOLTAGE_CPU_LIMIT_UI := 0-5
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := voltage_Spacewar
@@ -43,6 +21,7 @@ PRODUCT_DEVICE := Spacewar
 PRODUCT_BRAND := Nothing
 PRODUCT_MODEL := A063
 PRODUCT_MANUFACTURER := Nothing
+
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Attestation and Play Protect certification properties
@@ -56,8 +35,20 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=Spacewar \
-    BuildFingerprint="Nothing/Spacewar/Spacewar:12/SKQ1.211230.001/1666412462:user/release-keys"
+    BuildFingerprint="Nothing/Spacewar/Spacewar:15/AQ3A.240929.001/2604161140:user/release-keys"
 
-# ADB USB debugging enabled by default
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.usb.config=adb
+# Fix duplicate sysprop: ROM audio defaults use = instead of ?=
+$(shell sed -i 's/ro.config.ringtone=/ro.config.ringtone?=/; s/ro.config.alarm_alert=/ro.config.alarm_alert?=/; s/ro.config.notification_sound=/ro.config.notification_sound?=/' vendor/voltage/audio/audio.mk 2>/dev/null; true)
+
+# Fetch KernelSU source if missing (required by KSU-SUSFS kernel)
+$(shell if [ ! -f kernel/nothing/sm7325/KernelSU/kernel/Kconfig ]; then \
+    rm -rf kernel/nothing/sm7325/KernelSU && \
+    git clone -b master-susfs --depth 1 https://github.com/William24hmar/KernelSU.git kernel/nothing/sm7325/KernelSU 2>/dev/null; \
+fi; \
+sh device/nothing/Spacewar/rootdir/bin/fix_ksu_dupes.sh > /dev/null 2>&1; \
+true)
+# Replace vendor camxoverridesettings.txt with crDroid version
+$(shell sh device/nothing/Spacewar/rootdir/bin/fix_camera_configs.sh)
+# Android 17 vendor compatibility
+$(shell sh device/nothing/Spacewar/rootdir/bin/fix_vendor_a17.sh)
+
