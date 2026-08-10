@@ -1,0 +1,61 @@
+--- a/kernel/supercall/dispatch.c
++++ b/kernel/supercall/dispatch.c
+@@ -678,10 +678,6 @@ struct ksu_get_full_version_cmd {
+     char version_full[KSU_FULL_VERSION_STRING]; // Output: full version string
+ };
+ 
+-struct ksu_hook_type_cmd {
+-    char hook_type[32]; // Output: hook type string
+-};
+-
+ struct ksu_manager_entry {
+     __u32 uid;
+     __u32 allow;
+@@ -690,8 +686,6 @@ struct ksu_manager_entry {
+ };
+ 
+ // Downstream add IOCTL command definitions
+-#define KSU_IOCTL_HOOK_TYPE \
+-    _IOC(_IOC_READ, 'K', 101, 0)
+ // 102 = ENABLE_KPM (KernelPatch Module),deprecated
+ #define KSU_IOCTL_DYNAMIC_MANAGER \
+     _IOC(_IOC_READ | _IOC_WRITE, 'K', 103, 0)
+@@ -705,7 +699,6 @@ static const __u32 KSU_IOCTL_GET_VER = _IOC(_IOC_READ, 'K', 98, 0);
+ static const __u32 KSU_IOCTL_GET_VERSION_TAG = _IOC(_IOC_READ, 'K', 99, 0);
+ // Downstream add IOCTL command definitions
+ static const __u32 KSU_IOCTL_GET_FULL_VERSION = _IOC(_IOC_READ, 'K', 100, 0);
+-static const __u32 KSU_IOCTL_HOOK_TYPE = _IOC(_IOC_READ, 'K', 101, 0);
+ // 102 = ENABLE_KPM (KernelPatch Module),deprecated
+ static const __u32 KSU_IOCTL_DYNAMIC_MANAGER = _IOC(_IOC_READ | _IOC_WRITE, 'K', 103, 0);
+ // 104 = old get_managers, deprecated
+@@ -784,27 +777,6 @@ static int do_get_full_version(void __user *arg)
+     return 0;
+ }
+ 
+-// 101. HOOK_TYPE - Get hook type
+-static int do_get_hook_type(void __user *arg)
+-{
+-    struct ksu_hook_type_cmd cmd = { 0 };
+-#if defined(CONFIG_KSU_TAMPER_SYSCALL_TABLE)
+-    const char *type = "Syscall Table Hijacking";
+-#elif defined(CONFIG_KSU_KPROBES_KSUD)
+-    const char *type = "Kprobes";
+-#else
+-    const char *type = "Manual";
+-#endif
+-
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 13, 0)
+-    strscpy(cmd.hook_type, type, sizeof(cmd.hook_type));
+-#else
+-    strlcpy(cmd.hook_type, type, sizeof(cmd.hook_type));
+-#endif
+-
+-    if (copy_to_user(arg, &cmd, sizeof(cmd))) {
+-        pr_err("get_hook_type: copy_to_user failed\n");
+-        return -EFAULT;
+-    }
+-
+-    return 0;
+-}
+-
+ static int do_dynamic_manager(void __user *arg)
