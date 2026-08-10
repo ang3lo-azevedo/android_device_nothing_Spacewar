@@ -15,15 +15,6 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 # Inherit some common Voltage stuff.
 $(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
-# Boost Framework configuration for Snapdragon 778G+
-VOLTAGE_CPU_SMALL_CORES := 0,1,2,3
-VOLTAGE_CPU_BIG_CORES := 4,5,6,7
-VOLTAGE_CPU_BG := 0-2
-VOLTAGE_CPU_FG := 0-7
-VOLTAGE_CPU_LIMIT_BG := 0-1
-VOLTAGE_CPU_UNLIMIT_UI := 0-7
-VOLTAGE_CPU_LIMIT_UI := 0-5
-
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := voltage_Spacewar
 PRODUCT_DEVICE := Spacewar
@@ -32,6 +23,13 @@ PRODUCT_MODEL := A063
 PRODUCT_MANUFACTURER := Nothing
 
 PRODUCT_CHARACTERISTICS := nosdcard
+
+# Attestation and Play Protect certification properties
+PRODUCT_MANUFACTURER_FOR_ATTESTATION := Nothing
+PRODUCT_BRAND_FOR_ATTESTATION := Nothing
+PRODUCT_DEVICE_FOR_ATTESTATION := Spacewar
+PRODUCT_NAME_FOR_ATTESTATION := Spacewar
+PRODUCT_MODEL_FOR_ATTESTATION := A063
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
