@@ -563,7 +563,5 @@
           vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
 
-    <!-- Enable taskbar (persistent dock with recent apps) on this device -->
-    <bool name="config_enableTaskbar">true</bool>
 
 </resources>
