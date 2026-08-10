@@ -104,8 +104,6 @@ $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
-    config_enableTaskbar
-
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
