@@ -49,6 +49,4 @@ sh device/nothing/Spacewar/rootdir/bin/fix_ksu_dupes.sh > /dev/null 2>&1; \
 true)
 # Replace vendor camxoverridesettings.txt with crDroid version
 $(shell sh device/nothing/Spacewar/rootdir/bin/fix_camera_configs.sh)
-# Android 17 vendor compatibility
-$(shell sh device/nothing/Spacewar/rootdir/bin/fix_vendor_a17.sh > /dev/null 2>&1)
 
