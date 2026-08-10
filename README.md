@@ -13,10 +13,26 @@ This tree is a merge of improvements from multiple Spacewar maintainers:
 | [smrth097](https://github.com/smrth097) | [`16.2-clean`](https://github.com/smrth097/android_device_nothing_Spacewar) | Perf init script, IRQ balance config, SPAMMY_LOG_TAGS, QTI vndfwk, WiFi secondary STA, keyguard margin fix, vibrate on icon animation |
 | [crDroid](https://github.com/crdroidandroid) | [`16.0`](https://github.com/crdroidandroid/android_device_nothing_Spacewar) | NOS 3.2 mixer paths, camcorder audio fix, radio power saving, Bluetooth ASHA/AptX/HD/Adaptive/LDAC, sensor calibration libs, camera soong configs, audio skip_speaker |
 | [halogenOS](https://github.com/halogenOS) | [`XOS-16.2`](https://github.com/halogenOS/android_device_nothing_Spacewar) | Linear-nits brightness mapping, Extra Dim evening dimmer config |
-| [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps) | N/A | NGlyphs (via hardware/nothing), recovery ADSP battery monitoring |
+| [StudioKeys-Dumps](https://github.com/StudioKeys-Dumps) | N/A | NGlyphs (via hardware/nothing), recovery ADSP battery monitoring, cp2a base for voltage-17 |
+
+## A17 Changes (voltage-17 branch)
+
+- Rebased on StudioKeys-Dumps cp2a (Android 17)
+- TARGET_ARCH_VARIANT: armv8-2a-dotprod, TARGET_2ND_ARCH_VARIANT: armv8-2a
+- Removed config_enableTaskbar (A16 relic)
+- Resolved merge conflict markers from rebase
+- Added device/lineage/sepolicy to manifest for libperfmgr
+
+## Branches
+
+| Branch | Android | Status |
+|--------|---------|--------|
+| `voltage-17` | 17 (cp2a) | Active |
+| `voltage` | 16 (bp4a) | Production |
+| `voltage-old` | 16 | Archive |
+
 
 ## Features
-
 - Nothing Camera with video recording fix (libui-v34, 14 arcsoft libs)
 - Google Camera (from kleidione's vendor)
 - NGlyphs - system app for glyph LED control, no root needed
@@ -56,3 +72,7 @@ brunch Spacewar
 - [crDroid](https://github.com/crdroidandroid) - Bluetooth, camera, and radio improvements
 - [halogenOS](https://github.com/halogenOS) - Display brightness and Extra Dim improvements
 - [VoltageOS](https://github.com/VoltageOS) - ROM platform
+
+## Maintainer
+
+Angelo Azevedo
