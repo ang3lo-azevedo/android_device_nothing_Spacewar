@@ -2,11 +2,4 @@
 <resources>
     <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
     <string name="def_device_name_simple">Nothing Phone (1)</string>
-
-    <!-- Default color mode to Natural, color enhance off -->
-    <integer name="def_display_color_mode">0</integer>
-    <integer name="def_display_color_enhance">0</integer>
-
-    <!-- Force taskbar on by default -->
-    <integer name="def_enable_taskbar">1</integer>
 </resources>
